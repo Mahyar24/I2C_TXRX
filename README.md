@@ -1,6 +1,8 @@
 # I2C-TXRX
 Run this code for displaying your server TX-RX on a 16*2 I2C display with the help of a RPi!
 
+![LED](./GIF.gif)
+
 ## Server-Side Installation and Running
 
 Use the [git](https://git-scm.com/downloads) to clone this repository.
