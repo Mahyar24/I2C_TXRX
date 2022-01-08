@@ -19,7 +19,7 @@ python3.7 server.py
 
 ## Client-Side Installation and Running
 
-First, you must install [this driver](https://github.com/the-raspberry-pi-guy/lcd). Then, use the [git](https://git-scm.com/downloads) to clone this repository.
+First, **you must install [this driver](https://github.com/the-raspberry-pi-guy/lcd)**. Then, use the [git](https://git-scm.com/downloads) to clone this repository.
 
 ```bash
 git clone https://github.com/Mahyar24/I2C_TXRX && cd I2C_TXRX;
