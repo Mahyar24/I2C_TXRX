@@ -27,7 +27,7 @@ sock.bind(("", PORT))
 
 
 def hr_size(size_b, interval, k=1000, accuracy=2):
-    units = ("B/S", "KB/S", "MB/S", "GB/S", "TB/S")
+    units = ("B/S", "KB/S", "MB/S", "GB/S", "TB/S", 'PB/S', 'EB/S', 'ZB/S', 'YB/S')
     speed = size_b / interval
     pattern = "{:6.{}f}{:5}"
     for i, unit in enumerate(units[:-1]):
@@ -55,11 +55,9 @@ def populate_msg():
     begin = True
     for r, t in zip(get_rx(), get_tx()):
         if not begin:
-            yield bytes(
-                f"RX:  {hr_size(r - previous_r, INTERVAL)},"
-                f"TX:  {hr_size(t - previous_t, INTERVAL)}",
-                "UTF-8",
-            )
+            rx_line = f'RX:{hr_size(r - previous_r, INTERVAL):>14}'
+            tx_line = f'TX:{hr_size(t - previous_t, INTERVAL):>14}'
+            yield bytes(f'{rx_line},{tx_line}', 'UTF-8')
         else:
             begin = False
 
